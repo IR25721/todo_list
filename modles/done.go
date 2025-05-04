@@ -64,19 +64,11 @@ func GetDoneList() ([]Done, error) {
 	return dones, nil
 }
 
-func DoneList(dones []Done) {
-	if len(dones) == 0 {
-		fmt.Println("終わらせたタスクはありません！")
-		return
-	} else {
-		fmt.Println("======= DONE LIST =======")
-		for _, done := range dones {
-			fmt.Printf("ID       : %s\n", done.Task.ID)
-			fmt.Printf("Task     : %s\n", done.Task.Doc)
-			fmt.Printf("DoneDate : %s\n", done.DoneDate)
-			fmt.Println("--------------------------")
-		}
-	}
+func (d Done) PrintElement() {
+	fmt.Printf("ID       : %s\n", d.Task.ID)
+	fmt.Printf("Task     : %s\n", d.Task.Doc)
+	fmt.Printf("DoneDate : %s\n", d.DoneDate)
+	fmt.Println("--------------------------")
 }
 
 func AddDoneElement() {

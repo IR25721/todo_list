@@ -1,5 +1,1 @@
 [tasks]
-  [tasks.1]
-    id = "1"
-    doc = "todoリストを完成させる"
-    deadline = "5/4"

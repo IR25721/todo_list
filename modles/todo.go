@@ -65,19 +65,11 @@ func GetTodoList() ([]Todo, error) {
 	return todos, nil
 }
 
-func TodoList(todos []Todo) {
-	if len(todos) == 0 {
-		fmt.Println("タスクはありません.ごゆっくりお過ごしください！")
-		return
-	} else {
-		fmt.Println("======= TODO LIST =======")
-		for _, todo := range todos {
-			fmt.Printf("ID       : %s\n", todo.Task.ID)
-			fmt.Printf("Task     : %s\n", todo.Task.Doc)
-			fmt.Printf("Deadline : %s\n", todo.DeadLine)
-			fmt.Println("--------------------------")
-		}
-	}
+func (t Todo) PrintElement() {
+	fmt.Printf("ID       : %s\n", t.Task.ID)
+	fmt.Printf("Task     : %s\n", t.Task.Doc)
+	fmt.Printf("Deadline : %s\n", t.DeadLine)
+	fmt.Println("--------------------------")
 }
 
 func AddTodoElement(todos []Todo, dones []Done) {

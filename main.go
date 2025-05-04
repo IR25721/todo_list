@@ -30,13 +30,13 @@ func main() {
 
 		switch choice {
 		case 0:
-			modles.TodoList(todoList)
+			modles.PrintList("todo_list", modles.ToTaskItem(todoList))
 		case 1:
 			modles.AddTodoElement(todoList, doneList)
 		case 2:
 			modles.DelTodoElement()
 		case 3:
-			modles.DoneList(doneList)
+			modles.PrintList("done_list", modles.ToTaskItem(doneList))
 		case 4:
 			modles.AddDoneElement()
 		case 5:
